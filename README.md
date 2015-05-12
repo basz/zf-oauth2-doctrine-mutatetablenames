@@ -49,4 +49,6 @@ When satisfied run this command to actually modify your database
 php public/index.php orm:schema-tool:update --force
 ```
 
- *WARNING: Will find any difference between the doctrine managed entities and the schema found in the database, not just the ones regarding the table name changes!* 
+Now you should manually copy the relevant information to the new tables. Old tables are not removed unless you specify the '--complete' flag.
+
+*WARNING: Will find any difference between the doctrine managed entities and the schema found in the database, not just the ones regarding the table name changes!* 
