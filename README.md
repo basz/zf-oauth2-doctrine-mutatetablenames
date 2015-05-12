@@ -13,7 +13,7 @@ Installation
 Installation of this module uses composer. For composer documentation, please refer to [getcomposer.org](http://getcomposer.org/).
 
 ```sh
-$ php composer.phar require bushbaby/zf-oauth2-doctrine-mutatetablenames "~0.1"
+$ php composer.phar require bushbaby/zf-oauth2-doctrine-mutatetablenames "~0.2"
 ```
 
 Add this module to your application's configuration:
