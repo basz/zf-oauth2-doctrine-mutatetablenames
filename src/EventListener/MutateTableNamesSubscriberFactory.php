@@ -1,6 +1,6 @@
 <?php
 
-namespace ZF\OAuth2\DoctrineMutateTableNames\EventListener;
+namespace ZF\OAuth2\Doctrine\MutateTableNames\EventListener;
 
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
@@ -20,7 +20,7 @@ class MutateTableNamesSubscriberFactory implements FactoryInterface
 
         $mapping = ArrayUtils::merge(
             $config['zf-oauth2-doctrine']['storage_settings']['dynamic_mapping'],
-            $config['zf-oauth2-doctrine-mutatetablenames']
+            $config['zf-oauth2-doctrine']['mutatetablenames']
         );
 
         return new MutateTableNamesSubscriber($mapping);

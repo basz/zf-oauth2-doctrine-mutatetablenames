@@ -21,7 +21,7 @@ Add this module to your application's configuration:
 ```php
 'modules' => array(
    ...
-   'ZF\OAuth2\DoctrineMutateTableNames',
+   'ZF\OAuth2\Doctrine\MutateTableNames',
 ),
 ```
 
@@ -31,7 +31,7 @@ Configuration
 
 Copy `config/oauth2.doctrine-orm.mutatetablenames.global.php.dist` to your autoload directory and rename to `oauth2.doctrine-orm.mutatetablenames.global.php`
 
-Edit the aproppiate values to customize table names. This module considers the usage of the configured doctrine event manager.
+Edit the appropriate values to customize table names. This module considers the usage of the configured doctrine event manager.
 
 
 Migration

@@ -1,6 +1,6 @@
 <?php
 
-namespace ZF\OAuth2\DoctrineMutateTableNames\EventListener;
+namespace ZF\OAuth2\Doctrine\MutateTableNames\EventListener;
 
 use Doctrine\Common\EventSubscriber;
 use Doctrine\ORM\Event\LoadClassMetadataEventArgs;

@@ -1,23 +1,25 @@
 <?php
 
 return array(
-    'zf-oauth2-doctrine-mutatetablenames' => array(
-        'access_token_entity'       => array('primary_table' => array('name' => 'oauth2_accesstoken')),
-        'authorization_code_entity' => array('primary_table' => array('name' => 'oauth2_authorizationcode')),
-        'public_key_entity'         => array('primary_table' => array('name' => 'oauth2_publickey')),
-        'client_entity'             => array('primary_table' => array('name' => 'oauth2_client')),
-        'jti_entity'                => array('primary_table' => array('name' => 'oauth2_jti')),
-        'jwt_entity'                => array('primary_table' => array('name' => 'oauth2_jwt')),
-        'public_key_entity'         => array('primary_table' => array('name' => 'oauth2_publickey')),
-        'refresh_token_entity'      => array('primary_table' => array('name' => 'oauth2_refreshtoken')),
-        'scope_entity'              => array(
-            'primary_table' => array('name' => 'oauth2_scope'),
-            'associations'  => array(
-                'accessToken'       => array('joinTable' => array('name' => 'oauth2_accesstoken_to_scope')),
-                'authorizationCode' => array('joinTable' => array('name' => 'oauth2_authorizationcode_to_scope')),
-                'client'            => array('joinTable' => array('name' => 'oauth2_client_to_scope')),
-                'refreshToken'      => array('joinTable' => array('name' => 'oauth2_refreshtoken_to_scope')),
-            )
+    'zf-oauth2-doctrine' => array('
+        'mutatetablenames'
+            'access_token_entity'       => array('primary_table' => array('name' => 'oauth2_accesstoken')),
+            'authorization_code_entity' => array('primary_table' => array('name' => 'oauth2_authorizationcode')),
+            'public_key_entity'         => array('primary_table' => array('name' => 'oauth2_publickey')),
+            'client_entity'             => array('primary_table' => array('name' => 'oauth2_client')),
+            'jti_entity'                => array('primary_table' => array('name' => 'oauth2_jti')),
+            'jwt_entity'                => array('primary_table' => array('name' => 'oauth2_jwt')),
+            'public_key_entity'         => array('primary_table' => array('name' => 'oauth2_publickey')),
+            'refresh_token_entity'      => array('primary_table' => array('name' => 'oauth2_refreshtoken')),
+            'scope_entity'              => array(
+                'primary_table' => array('name' => 'oauth2_scope'),
+                'associations'  => array(
+                    'accessToken'       => array('joinTable' => array('name' => 'oauth2_accesstoken_to_scope')),
+                    'authorizationCode' => array('joinTable' => array('name' => 'oauth2_authorizationcode_to_scope')),
+                    'client'            => array('joinTable' => array('name' => 'oauth2_client_to_scope')),
+                    'refreshToken'      => array('joinTable' => array('name' => 'oauth2_refreshtoken_to_scope')),
+                )
+            ),
         ),
     ),
 );

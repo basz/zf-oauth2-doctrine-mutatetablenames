@@ -10,12 +10,14 @@
   ],
   "require": {
     "php": ">=5.3.23",
+    "zendframework/zend-modulemanager": "~2.3",
+    "zendframework/zend-stdlib": "~2.3",
     "zfcampus/zf-oauth2-doctrine": "*",
     "doctrine/doctrine-module": "~0.8"
   },
   "autoload": {
     "psr-4": {
-      "ZF\\OAuth2\\DoctrineMutateTableNames\\": "src/"
+      "ZF\\OAuth2\\Doctrine\\MutateTableNames\\": "src/"
     },
     "classmap": [
       "Module.php"
