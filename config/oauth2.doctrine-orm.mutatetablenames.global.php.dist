@@ -2,16 +2,37 @@
 
 return array(
     'zf-oauth2-doctrine' => array(
-        'mutatetablenames'
-            'access_token_entity'       => array('primary_table' => array('name' => 'oauth2_accesstoken')),
-            'authorization_code_entity' => array('primary_table' => array('name' => 'oauth2_authorizationcode')),
-            'public_key_entity'         => array('primary_table' => array('name' => 'oauth2_publickey')),
-            'client_entity'             => array('primary_table' => array('name' => 'oauth2_client')),
-            'jti_entity'                => array('primary_table' => array('name' => 'oauth2_jti')),
-            'jwt_entity'                => array('primary_table' => array('name' => 'oauth2_jwt')),
-            'public_key_entity'         => array('primary_table' => array('name' => 'oauth2_publickey')),
-            'refresh_token_entity'      => array('primary_table' => array('name' => 'oauth2_refreshtoken')),
+        'mutatetablenames' => array(
+            'access_token_entity'       => array(
+                'entity'        => 'ZF\OAuth2\Doctrine\Entity\AccessToken',
+                'primary_table' => array('name' => 'oauth2_accesstoken')
+            ),
+            'authorization_code_entity' => array(
+                'entity'        => 'ZF\OAuth2\Doctrine\Entity\AuthorizationCode',
+                'primary_table' => array('name' => 'oauth2_authorizationcode')
+            ),
+            'client_entity'             => array(
+                'entity'        => 'ZF\OAuth2\Doctrine\Entity\Client',
+                'primary_table' => array('name' => 'oauth2_client')
+            ),
+            'jti_entity'                => array(
+                'entity'        => 'ZF\OAuth2\Doctrine\Entity\Jti',
+                'primary_table' => array('name' => 'oauth2_jti')
+            ),
+            'jwt_entity'                => array(
+                'entity'        => 'ZF\OAuth2\Doctrine\Entity\Jwt',
+                'primary_table' => array('name' => 'oauth2_jwt')
+            ),
+            'public_key_entity'         => array(
+                'entity'        => 'ZF\OAuth2\Doctrine\Entity\PublicKey',
+                'primary_table' => array('name' => 'oauth2_publickey')
+            ),
+            'refresh_token_entity'      => array(
+                'entity'        => 'ZF\OAuth2\Doctrine\Entity\RefreshToken',
+                'primary_table' => array('name' => 'oauth2_refreshtoken')
+            ),
             'scope_entity'              => array(
+                'entity'        => 'ZF\OAuth2\Doctrine\Entity\Scope',
                 'primary_table' => array('name' => 'oauth2_scope'),
                 'associations'  => array(
                     'accessToken'       => array('joinTable' => array('name' => 'oauth2_accesstoken_to_scope')),
