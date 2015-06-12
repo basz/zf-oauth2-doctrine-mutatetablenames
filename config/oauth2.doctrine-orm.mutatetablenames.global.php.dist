@@ -1,7 +1,7 @@
 <?php
 
 return array(
-    'zf-oauth2-doctrine' => array('
+    'zf-oauth2-doctrine' => array(
         'mutatetablenames'
             'access_token_entity'       => array('primary_table' => array('name' => 'oauth2_accesstoken')),
             'authorization_code_entity' => array('primary_table' => array('name' => 'oauth2_authorizationcode')),
@@ -18,7 +18,7 @@ return array(
                     'authorizationCode' => array('joinTable' => array('name' => 'oauth2_authorizationcode_to_scope')),
                     'client'            => array('joinTable' => array('name' => 'oauth2_client_to_scope')),
                     'refreshToken'      => array('joinTable' => array('name' => 'oauth2_refreshtoken_to_scope')),
-                )
+                ),
             ),
         ),
     ),
