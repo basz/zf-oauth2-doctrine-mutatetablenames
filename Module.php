@@ -46,7 +46,7 @@ class Module implements
         $subscriber = $serviceLocator->get('ZF\OAuth2\Doctrine\MutateTableNames\MutateTableNamesSubscriber');
 
         /** @var EventManager $eventManager */
-        $eventManager = $serviceLocator->get($config['zf-oauth2-doctrine']['storage_settings']['event_manager']);
+        $eventManager = $serviceLocator->get($config['zf-oauth2-doctrine']['default']['event_manager']);
         $eventManager->addEventSubscriber($subscriber);
     }
 
