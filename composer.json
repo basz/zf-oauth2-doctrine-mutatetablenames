@@ -12,7 +12,7 @@
     "php": ">=5.3.23",
     "zendframework/zend-modulemanager": "~2.3",
     "zendframework/zend-stdlib": "~2.3",
-    "zfcampus/zf-oauth2-doctrine": "*",
+    "api-skeletons/zf-oauth2-doctrine": "^1.0",
     "doctrine/doctrine-module": "~0.8"
   },
   "autoload": {
