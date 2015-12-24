@@ -5,7 +5,11 @@ About
 -----
 
 This module allows to configure the tables that the [OAuth2 Doctrine Adapter](https://github.com/TomHAnderson/zf-oauth2-doctrine) for [Apigility](https://apigility.org) generates.
- 
+
+[![Latest Stable Version](https://poser.pugx.org/bushbaby/zf-oauth2-doctrine-mutatetablenames/v/stable.svg)](https://packagist.org/packages/bushbaby/slmqueuedoctrine-postponablejobstrategy)
+[![Total Downloads](https://poser.pugx.org/bushbaby/zf-oauth2-doctrine-mutatetablenames/downloads.svg)](https://packagist.org/packages/bushbaby/slmqueuedoctrine-postponablejobstrategy)
+[![Latest Unstable Version](https://poser.pugx.org/bushbaby/zf-oauth2-doctrine-mutatetablenames/v/unstable.svg)](https://packagist.org/packages/bushbaby/slmqueuedoctrine-postponablejobstrategy)
+[![License](https://poser.pugx.org/bushbaby/zf-oauth2-doctrine-mutatetablenames/license.svg)](https://packagist.org/packages/bushbaby/slmqueuedoctrine-postponablejobstrategy)
 
 Installation
 ------------
