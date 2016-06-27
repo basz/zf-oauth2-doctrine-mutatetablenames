@@ -9,11 +9,11 @@
     "apigility"
   ],
   "require": {
-    "php": ">=5.3.23",
+    "php": ">=5.5",
     "zendframework/zend-modulemanager": "~2.3",
     "zendframework/zend-stdlib": "~2.3",
     "api-skeletons/zf-oauth2-doctrine": "^1.0",
-    "doctrine/doctrine-module": "~0.8"
+    "doctrine/doctrine-module": "~0.8|^1.0"
   },
   "autoload": {
     "psr-4": {
