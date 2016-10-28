@@ -2,6 +2,7 @@
 
 namespace ZF\OAuth2\Doctrine\MutateTableNames\EventListener;
 
+use Interop\Container\ContainerInterface;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 use Zend\Stdlib\ArrayUtils;
@@ -9,14 +10,16 @@ use Zend\Stdlib\ArrayUtils;
 class MutateTableNamesSubscriberFactory implements FactoryInterface
 {
     /**
-     * Create service
+     * Create an service
      *
-     * @param ServiceLocatorInterface $serviceLocator
-     * @return mixed
+     * @param  ContainerInterface $container
+     * @param  string             $requestedName
+     * @param  null|array         $options
+     * @return MutateTableNamesSubscriber
      */
-    public function createService(ServiceLocatorInterface $serviceLocator)
+    public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        $config  = $serviceLocator->get('Config');
+        $config = $container->get('config');
 
         $mapping = ArrayUtils::merge(
             $config['zf-oauth2-doctrine']['default']['dynamic_mapping'],
@@ -24,5 +27,18 @@ class MutateTableNamesSubscriberFactory implements FactoryInterface
         );
 
         return new MutateTableNamesSubscriber($mapping);
+    }
+
+    /**
+     * Create service
+     *
+     * for V2 compatibility
+     *
+     * @param ServiceLocatorInterface $serviceLocator
+     * @return mixed
+     */
+    public function createService(ServiceLocatorInterface $serviceLocator)
+    {
+        return $this($serviceLocator, __CLASS__);
     }
 }
