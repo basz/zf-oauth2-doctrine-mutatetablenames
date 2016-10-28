@@ -5,7 +5,8 @@ namespace ZF\OAuth2\Doctrine\MutateTableNames;
 use Doctrine\Common\EventManager;
 use Zend\EventManager\EventInterface;
 use Zend\ModuleManager\Feature;
-use \ZF\OAuth2\Doctrine\MutateTableNames\EventSubscriber\MutateTableNamesSubscriber;
+use Zend\ServiceManager\ServiceLocatorInterface;
+use ZF\OAuth2\Doctrine\MutateTableNames\EventSubscriber\MutateTableNamesSubscriber;
 
 class Module implements
     Feature\AutoloaderProviderInterface,
@@ -20,9 +21,13 @@ class Module implements
      */
     public function getAutoloaderConfig()
     {
-        return ['Zend\Loader\StandardAutoloader' => ['namespaces' => [
-            __NAMESPACE__ => __DIR__,
-        ]]];
+        return [
+            'Zend\Loader\StandardAutoloader' => [
+                'namespaces' => [
+                    __NAMESPACE__ => __DIR__,
+                ]
+            ]
+        ];
     }
 
     /**
@@ -34,6 +39,7 @@ class Module implements
      */
     public function onBootstrap(EventInterface $e)
     {
+        /** @var ServiceLocatorInterface $serviceLocator */
         $serviceLocator = $e->getParam('application')->getServiceManager();
         $config         = $serviceLocator->get('Config');
 
@@ -60,5 +66,4 @@ class Module implements
     {
         return ['ZF\OAuth2\Doctrine'];
     }
-
 }
