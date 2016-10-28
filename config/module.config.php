@@ -1,13 +1,15 @@
 <?php
 
+use ZF\OAuth2\Doctrine\MutateTableNames\Container\MutateTableNamesSubscriberFactory;
+use ZF\OAuth2\Doctrine\MutateTableNames\EventSubscriber\MutateTableNamesSubscriber;
+
 return array(
     'zf-oauth2-doctrine' => [
         'mutatetablenames' => [],
     ],
     'service_manager'    => [
         'factories' => [
-            'ZF\OAuth2\Doctrine\MutateTableNames\MutateTableNamesSubscriber'
-            => 'ZF\OAuth2\Doctrine\MutateTableNames\EventListener\MutateTableNamesSubscriberFactory',
+            MutateTableNamesSubscriber::class => MutateTableNamesSubscriberFactory::class,
         ],
     ],
 );

@@ -1,11 +1,12 @@
 <?php
 
-namespace ZF\OAuth2\Doctrine\MutateTableNames\EventListener;
+namespace ZF\OAuth2\Doctrine\MutateTableNames\Container;
 
 use Interop\Container\ContainerInterface;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 use Zend\Stdlib\ArrayUtils;
+use ZF\OAuth2\Doctrine\MutateTableNames\EventSubscriber\MutateTableNamesSubscriber;
 
 class MutateTableNamesSubscriberFactory implements FactoryInterface
 {

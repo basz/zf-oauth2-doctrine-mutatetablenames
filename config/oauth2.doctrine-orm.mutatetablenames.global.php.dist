@@ -1,7 +1,7 @@
 <?php
 
 return array(
-    'zf-oauth2-doctrine' => array(
+    'zf-oauth2-doctrine' => [
         'mutatetablenames' => [
             'access_token_entity'       => [
                 'entity'        => ZF\OAuth2\Doctrine\Entity\AccessToken::class,
@@ -42,5 +42,5 @@ return array(
                 ],
             ],
         ],
-    ),
+    ],
 );
