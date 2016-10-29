@@ -1,6 +1,6 @@
 <?php
 
-namespace ZF\OAuth2\Doctrine\MutateTableNames\EventListener;
+namespace ZF\OAuth2\Doctrine\MutateTableNames\EventSubscriber;
 
 use Doctrine\Common\EventSubscriber;
 use Doctrine\ORM\Event\LoadClassMetadataEventArgs;
@@ -14,12 +14,12 @@ class MutateTableNamesSubscriber implements EventSubscriber
      *
      * @var array
      */
-    protected $config = array();
+    protected $config = [];
 
     /**
      * @param array $config
      */
-    public function __construct(array $config = array())
+    public function __construct(array $config = [])
     {
         $this->config = $config;
     }
@@ -29,9 +29,9 @@ class MutateTableNamesSubscriber implements EventSubscriber
      */
     public function getSubscribedEvents()
     {
-        return array(
+        return [
             Events::loadClassMetadata,
-        );
+        ];
     }
 
     /**
