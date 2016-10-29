@@ -14,7 +14,7 @@ class MutateTableNamesSubscriberFactoryTest extends \PHPUnit_Framework_TestCase
 {
     public function testCanCreateFromFactory()
     {
-        $container = $this->createMock(ContainerInterface::class);
+        $container = $this->getMock(ContainerInterface::class);
 
         $container->expects($this->at(0))
             ->method('get')
@@ -36,7 +36,7 @@ class MutateTableNamesSubscriberFactoryTest extends \PHPUnit_Framework_TestCase
 
     public function testCanCreateFromFactoryV2()
     {
-        $container = $this->createMock(ServiceLocatorInterface::class);
+        $container = $this->getMock(ServiceLocatorInterface::class);
 
         $container->expects($this->at(0))
             ->method('get')

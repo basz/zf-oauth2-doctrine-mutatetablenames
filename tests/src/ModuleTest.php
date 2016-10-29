@@ -21,11 +21,11 @@ class ModuleTest extends \PHPUnit_Framework_TestCase
 
         $this->assertInstanceOf(BootstrapListenerInterface::class, $module);
 
-        $event                      = $this->createMock(EventInterface::class);
-        $application                = $this->createMock(ApplicationInterface::class);
-        $serviceLocator             = $this->createMock(ServiceLocatorInterface::class);
-        $eventManager               = $this->createMock(EventManager::class);
-        $mutateTableNamesSubscriber = $this->createMock(MutateTableNamesSubscriber::class);
+        $event                      = $this->getMock(EventInterface::class);
+        $application                = $this->getMock(ApplicationInterface::class);
+        $serviceLocator             = $this->getMock(ServiceLocatorInterface::class);
+        $eventManager               = $this->getMock(EventManager::class);
+        $mutateTableNamesSubscriber = $this->getMock(MutateTableNamesSubscriber::class);
 
         // get app mock from event
         $event->expects($this->once())->method('getParam')->with('application')->willReturn($application);
