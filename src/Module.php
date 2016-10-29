@@ -41,7 +41,7 @@ class Module implements
     {
         /** @var ServiceLocatorInterface $serviceLocator */
         $serviceLocator = $e->getParam('application')->getServiceManager();
-        $config         = $serviceLocator->get('Config');
+        $config         = $serviceLocator->get('config');
 
         /** @var MutateTableNamesSubscriber $subscriber */
         $subscriber = $serviceLocator->get(MutateTableNamesSubscriber::class);
