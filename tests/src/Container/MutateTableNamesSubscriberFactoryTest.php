@@ -24,7 +24,9 @@ class MutateTableNamesSubscriberFactoryTest extends \PHPUnit_Framework_TestCase
                     'default'          => [
                         'dynamic_mapping' => []
                     ],
-                    'mutatetablenames' => []
+                    'mutatetablenames' => [
+                        'default' => []
+                    ]
                 ]
             ]);
 
@@ -46,7 +48,9 @@ class MutateTableNamesSubscriberFactoryTest extends \PHPUnit_Framework_TestCase
                     'default'          => [
                         'dynamic_mapping' => []
                     ],
-                    'mutatetablenames' => []
+                    'mutatetablenames' => [
+                        'default' => []
+                    ]
                 ]
             ]);
 
