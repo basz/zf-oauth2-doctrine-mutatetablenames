@@ -4,7 +4,10 @@ namespace ZF\OAuth2\Doctrine\MutateTableNamesTest;
 
 use Doctrine\Common\EventManager;
 use Zend\EventManager\EventInterface;
+use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
 use Zend\ModuleManager\Feature\BootstrapListenerInterface;
+use Zend\ModuleManager\Feature\ConfigProviderInterface;
+use Zend\ModuleManager\Feature\DependencyIndicatorInterface;
 use Zend\Mvc\ApplicationInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 use ZF\OAuth2\Doctrine\MutateTableNames\EventSubscriber\MutateTableNamesSubscriber;
@@ -21,11 +24,11 @@ class ModuleTest extends \PHPUnit_Framework_TestCase
 
         $this->assertInstanceOf(BootstrapListenerInterface::class, $module);
 
-        $event                      = $this->getMock(EventInterface::class);
-        $application                = $this->getMock(ApplicationInterface::class);
-        $serviceLocator             = $this->getMock(ServiceLocatorInterface::class);
-        $eventManager               = $this->getMock(EventManager::class);
-        $mutateTableNamesSubscriber = $this->getMock(MutateTableNamesSubscriber::class);
+        $event                      = $this->getMockBuilder(EventInterface::class)->getMock();
+        $application                = $this->getMockBuilder(ApplicationInterface::class)->getMock();
+        $serviceLocator             = $this->getMockBuilder(ServiceLocatorInterface::class)->getMock();
+        $eventManager               = $this->getMockBuilder(EventManager::class)->getMock();
+        $mutateTableNamesSubscriber = $this->getMockBuilder(MutateTableNamesSubscriber::class)->getMock();
 
         // get app mock from event
         $event->expects($this->once())->method('getParam')->with('application')->willReturn($application);
@@ -63,5 +66,42 @@ class ModuleTest extends \PHPUnit_Framework_TestCase
             ->with($mutateTableNamesSubscriber);
 
         $module->onBootstrap($event);
+    }
+
+    public function testModuleAutoloading()
+    {
+        $module = new Module();
+
+        $this->assertInstanceOf(AutoloaderProviderInterface::class, $module);
+
+        $autoload = $module->getAutoloaderConfig();
+        $this->assertInternalType('array', $autoload);
+        $this->assertSame(array(
+            'Zend\\Loader\\StandardAutoloader' =>
+                array(
+                    'namespaces' =>
+                        array(
+                            'ZF\\OAuth2\\Doctrine\\MutateTableNames' => realpath(__DIR__ . '/../../src'),
+                        ),
+                ),
+        ), $autoload);
+    }
+
+    public function testModuleConfig()
+    {
+        $module = new Module();
+
+        $this->assertInstanceOf(ConfigProviderInterface::class, $module);
+
+        $this->assertInternalType('array', $module->getConfig());
+    }
+
+    public function testModuleDependencies()
+    {
+        $module = new Module();
+
+        $this->assertInstanceOf(DependencyIndicatorInterface::class, $module);
+
+        $this->assertSame(['ZF\OAuth2\Doctrine'], $module->getModuleDependencies());
     }
 }
