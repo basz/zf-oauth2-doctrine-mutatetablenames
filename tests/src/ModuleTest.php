@@ -24,11 +24,11 @@ class ModuleTest extends \PHPUnit_Framework_TestCase
 
         $this->assertInstanceOf(BootstrapListenerInterface::class, $module);
 
-        $event                      = $this->getMock(EventInterface::class);
-        $application                = $this->getMock(ApplicationInterface::class);
-        $serviceLocator             = $this->getMock(ServiceLocatorInterface::class);
-        $eventManager               = $this->getMock(EventManager::class);
-        $mutateTableNamesSubscriber = $this->getMock(MutateTableNamesSubscriber::class);
+        $event                      = $this->getMockBuilder(EventInterface::class)->getMock();
+        $application                = $this->getMockBuilder(ApplicationInterface::class)->getMock();
+        $serviceLocator             = $this->getMockBuilder(ServiceLocatorInterface::class)->getMock();
+        $eventManager               = $this->getMockBuilder(EventManager::class)->getMock();
+        $mutateTableNamesSubscriber = $this->getMockBuilder(MutateTableNamesSubscriber::class)->getMock();
 
         // get app mock from event
         $event->expects($this->once())->method('getParam')->with('application')->willReturn($application);
@@ -81,7 +81,7 @@ class ModuleTest extends \PHPUnit_Framework_TestCase
                 array(
                     'namespaces' =>
                         array(
-                            'ZF\\OAuth2\\Doctrine\\MutateTableNames' => '/Users/bas/Sandbox/zf-oauth2-doctrine-mutatetablenames/src',
+                            'ZF\\OAuth2\\Doctrine\\MutateTableNames' => realpath(__DIR__ . '/../../src'),
                         ),
                 ),
         ), $autoload);
