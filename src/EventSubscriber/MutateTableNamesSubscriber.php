@@ -42,60 +42,65 @@ class MutateTableNamesSubscriber implements EventSubscriber
         /** @var ClassMetadataInfo $metadata */
         $metadata = $eventArgs->getClassMetadata();
 
-        switch ($metadata->getName()) {
-            case $this->config['client_entity']['entity']:
-                if (isset($this->config['client_entity']['primary_table'])) {
-                    $metadata->setPrimaryTable($this->config['client_entity']['primary_table']);
-                }
-                break;
+        $instanceConfigs = array_keys($this->config);
 
-            case $this->config['access_token_entity']['entity']:
-                if (isset($this->config['access_token_entity']['primary_table'])) {
-                    $metadata->setPrimaryTable($this->config['access_token_entity']['primary_table']);
-                }
-                break;
+        foreach ($instanceConfigs as $instanceConfig) {
 
-            case $this->config['authorization_code_entity']['entity']:
-                if (isset($this->config['authorization_code_entity']['primary_table'])) {
-                    $metadata->setPrimaryTable($this->config['authorization_code_entity']['primary_table']);
-                }
-                break;
-
-            case $this->config['refresh_token_entity']['entity']:
-                if (isset($this->config['refresh_token_entity']['primary_table'])) {
-                    $metadata->setPrimaryTable($this->config['refresh_token_entity']['primary_table']);
-                }
-                break;
-
-            case $this->config['scope_entity']['entity']:
-                if (isset($this->config['scope_entity']['primary_table'])) {
-                    $metadata->setPrimaryTable($this->config['scope_entity']['primary_table']);
-                }
-
-                if (isset($this->config['scope_entity']['associations'])) {
-                    foreach ($this->config['scope_entity']['associations'] as $fieldName => $association) {
-                        $metadata->setAssociationOverride($fieldName, $association);
+            switch ($metadata->getName()) {
+                case $this->config[$instanceConfig]['client_entity']['entity']:
+                    if (isset($this->config[$instanceConfig]['client_entity']['primary_table'])) {
+                        $metadata->setPrimaryTable($this->config[$instanceConfig]['client_entity']['primary_table']);
                     }
-                }
-                break;
+                    break;
 
-            case $this->config['jwt_entity']['entity']:
-                if (isset($this->config['jwt_entity']['primary_table'])) {
-                    $metadata->setPrimaryTable($this->config['jwt_entity']['primary_table']);
-                }
-                break;
+                case $this->config[$instanceConfig]['access_token_entity']['entity']:
+                    if (isset($this->config[$instanceConfig]['access_token_entity']['primary_table'])) {
+                        $metadata->setPrimaryTable($this->config[$instanceConfig]['access_token_entity']['primary_table']);
+                    }
+                    break;
 
-            case $this->config['jti_entity']['entity']:
-                if (isset($this->config['jti_entity']['primary_table'])) {
-                    $metadata->setPrimaryTable($this->config['jti_entity']['primary_table']);
-                }
-                break;
+                case $this->config[$instanceConfig]['authorization_code_entity']['entity']:
+                    if (isset($this->config[$instanceConfig]['authorization_code_entity']['primary_table'])) {
+                        $metadata->setPrimaryTable($this->config[$instanceConfig]['authorization_code_entity']['primary_table']);
+                    }
+                    break;
 
-            case $this->config['public_key_entity']['entity']:
-                if (isset($this->config['public_key_entity']['primary_table'])) {
-                    $metadata->setPrimaryTable($this->config['public_key_entity']['primary_table']);
-                }
-                break;
+                case $this->config[$instanceConfig]['refresh_token_entity']['entity']:
+                    if (isset($this->config[$instanceConfig]['refresh_token_entity']['primary_table'])) {
+                        $metadata->setPrimaryTable($this->config[$instanceConfig]['refresh_token_entity']['primary_table']);
+                    }
+                    break;
+
+                case $this->config[$instanceConfig]['scope_entity']['entity']:
+                    if (isset($this->config[$instanceConfig]['scope_entity']['primary_table'])) {
+                        $metadata->setPrimaryTable($this->config[$instanceConfig]['scope_entity']['primary_table']);
+                    }
+
+                    if (isset($this->config[$instanceConfig]['scope_entity']['associations'])) {
+                        foreach ($this->config[$instanceConfig]['scope_entity']['associations'] as $fieldName => $association) {
+                            $metadata->setAssociationOverride($fieldName, $association);
+                        }
+                    }
+                    break;
+
+                case $this->config[$instanceConfig]['jwt_entity']['entity']:
+                    if (isset($this->config[$instanceConfig]['jwt_entity']['primary_table'])) {
+                        $metadata->setPrimaryTable($this->config[$instanceConfig]['jwt_entity']['primary_table']);
+                    }
+                    break;
+
+                case $this->config[$instanceConfig]['jti_entity']['entity']:
+                    if (isset($this->config[$instanceConfig]['jti_entity']['primary_table'])) {
+                        $metadata->setPrimaryTable($this->config[$instanceConfig]['jti_entity']['primary_table']);
+                    }
+                    break;
+
+                case $this->config[$instanceConfig]['public_key_entity']['entity']:
+                    if (isset($this->config[$instanceConfig]['public_key_entity']['primary_table'])) {
+                        $metadata->setPrimaryTable($this->config[$instanceConfig]['public_key_entity']['primary_table']);
+                    }
+                    break;
+            }
         }
     }
 }

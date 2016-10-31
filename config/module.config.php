@@ -5,7 +5,9 @@ use ZF\OAuth2\Doctrine\MutateTableNames\EventSubscriber\MutateTableNamesSubscrib
 
 return array(
     'zf-oauth2-doctrine' => [
-        'mutatetablenames' => [],
+        'mutatetablenames' => [
+            'default' => []
+        ],
     ],
     'service_manager'    => [
         'factories' => [

@@ -3,6 +3,7 @@
 return array(
     'zf-oauth2-doctrine' => [
         'mutatetablenames' => [
+        'default' => [
             'access_token_entity'       => [
                 'entity'        => ZF\OAuth2\Doctrine\Entity\AccessToken::class,
                 'primary_table' => ['name' => 'oauth2_accesstoken']
@@ -41,6 +42,7 @@ return array(
                     'refreshToken'      => ['joinTable' => ['name' => 'oauth2_refreshtoken_to_scope']],
                 ],
             ],
+        ],
         ],
     ],
 );
