@@ -29,7 +29,7 @@ class MutateTableNamesSubscriberFactory implements FactoryInterface
                 continue;
             }
 
-            $instanceMapping = ArrayUtils::merge(
+            $instanceMapping[$instanceConfig] = ArrayUtils::merge(
                 $config['zf-oauth2-doctrine'][$instanceConfig]['dynamic_mapping'],
                 $config['zf-oauth2-doctrine']['mutatetablenames'][$instanceConfig]
             );
