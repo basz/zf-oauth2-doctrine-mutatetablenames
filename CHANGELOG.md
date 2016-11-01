@@ -1,6 +1,16 @@
 CHANGELOG
 =========
 
+0.4.0
+
+- [BC] Adds support for v1.0 of OAuth2 Doctrine Adapter which supports multiple OAuth2 servers
+- Adds compatibility with zf3
+
+0.3.0
+
+- [BC] drop php 5.3 and 5.4
+- Allows for doctrine module ^1.0
+
 0.2.2 Maintenance release
 
 - updated so it works with `api-skeletons/zf-oauth2-doctrine` again
