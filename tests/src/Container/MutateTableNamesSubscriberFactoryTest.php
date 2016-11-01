@@ -24,7 +24,9 @@ class MutateTableNamesSubscriberFactoryTest extends \PHPUnit_Framework_TestCase
                     'default'          => [
                         'dynamic_mapping' => []
                     ],
-                    'mutatetablenames' => []
+                    'mutatetablenames' => [
+                        'default' => []
+                    ]
                 ]
             ]);
 
@@ -46,12 +48,42 @@ class MutateTableNamesSubscriberFactoryTest extends \PHPUnit_Framework_TestCase
                     'default'          => [
                         'dynamic_mapping' => []
                     ],
-                    'mutatetablenames' => []
+                    'mutatetablenames' => [
+                        'default' => []
+                    ]
                 ]
             ]);
 
         $factory = new MutateTableNamesSubscriberFactory();
         $service = $factory->createService($container);
+
+        $this->assertInstanceOf(MutateTableNamesSubscriber::class, $service);
+    }
+
+    public function testOmittedServiceKeyIsNot()
+    {
+        $container = $this->getMockBuilder(ContainerInterface::class)->getMock();
+
+        $container->expects($this->at(0))
+            ->method('get')
+            ->with('config')
+            ->willReturn([
+                'zf-oauth2-doctrine' => [
+                    'default'          => [
+                        'dynamic_mapping' => []
+                    ],
+                    'non-default'          => [
+                        'dynamic_mapping' => []
+                    ],
+                    'mutatetablenames' => [
+                        'default' => [],
+                        // 'non-default' omitted on purpose
+                    ]
+                ]
+            ]);
+
+        $factory = new MutateTableNamesSubscriberFactory();
+        $service = $factory($container, 'requestedname');
 
         $this->assertInstanceOf(MutateTableNamesSubscriber::class, $service);
     }

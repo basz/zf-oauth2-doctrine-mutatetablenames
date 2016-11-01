@@ -39,15 +39,14 @@ class MutateTableNamesSubscriberTest extends \PHPUnit_Framework_TestCase
         $metadata->expects($this->once())->method('getName')->willReturn($entityName);
 
         // primary table names
-        if (isset($this->config[$configKey]['primary_table'])) {
-            $metadata->expects($this->once())->method('setPrimaryTable')->with($this->config[$configKey]['primary_table']);
+        if (isset($this->config['default'][$configKey]['primary_table'])) {
+            $metadata->expects($this->once())->method('setPrimaryTable')->with($this->config['default'][$configKey]['primary_table']);
         }
 
         // associated table names
-        if (isset($this->config[$configKey]['associations'])) {
-            foreach ($this->config[$configKey]['associations'] as $fieldName => $association) {
-                $metadata->expects($this->exactly(count($this->config[$configKey]['associations'])))->method('setAssociationOverride');
-                //->with($fieldName, $association)->will($this->returnValue($i));
+        if (isset($this->config['default'][$configKey]['associations'])) {
+            foreach ($this->config['default'][$configKey]['associations'] as $fieldName => $association) {
+                $metadata->expects($this->exactly(count($this->config['default'][$configKey]['associations'])))->method('setAssociationOverride');
             }
         }
 

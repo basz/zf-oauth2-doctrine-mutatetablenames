@@ -10,8 +10,8 @@
   ],
   "require": {
     "php": "^5.5 || ^7.0",
-    "zendframework/zend-modulemanager": "~2.3",
-    "zendframework/zend-stdlib": "~2.3",
+    "zendframework/zend-modulemanager": "^2.7",
+    "zendframework/zend-stdlib": "^2.7 || ^3.0",
     "api-skeletons/zf-oauth2-doctrine": "^1.0"
   },
   "autoload": {

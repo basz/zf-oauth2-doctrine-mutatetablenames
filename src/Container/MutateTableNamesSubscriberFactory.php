@@ -20,12 +20,26 @@ class MutateTableNamesSubscriberFactory implements FactoryInterface
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        $config = $container->get('config');
+        $config          = $container->get('config');
+        $instanceConfigs = array_keys($config['zf-oauth2-doctrine']);
+        $mapping         = [];
 
-        $mapping = ArrayUtils::merge(
-            $config['zf-oauth2-doctrine']['default']['dynamic_mapping'],
-            $config['zf-oauth2-doctrine']['mutatetablenames']
-        );
+        foreach ($instanceConfigs as $instanceConfig) {
+            if ('mutatetablenames' === $instanceConfig) {
+                continue;
+            }
+
+            if (!isset($config['zf-oauth2-doctrine']['mutatetablenames'][$instanceConfig])) {
+                $config['zf-oauth2-doctrine']['mutatetablenames'][$instanceConfig] = [];
+            }
+
+            $instanceMapping[$instanceConfig] = ArrayUtils::merge(
+                $config['zf-oauth2-doctrine'][$instanceConfig]['dynamic_mapping'],
+                $config['zf-oauth2-doctrine']['mutatetablenames'][$instanceConfig]
+            );
+
+            $mapping         = ArrayUtils::merge($instanceMapping, $mapping);
+        }
 
         return new MutateTableNamesSubscriber($mapping);
     }
