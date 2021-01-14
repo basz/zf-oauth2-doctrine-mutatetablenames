@@ -9,7 +9,7 @@
     "apigility"
   ],
   "require": {
-    "php": "^5.5 || ^7.0",
+    "php": "^5.5 || ^7.0 || ~8.0",
     "zendframework/zend-modulemanager": "^2.7",
     "zendframework/zend-stdlib": "^2.7 || ^3.0",
     "api-skeletons/zf-oauth2-doctrine": "^1.0 || ^2.0 || ^3.0"
