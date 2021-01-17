@@ -3,14 +3,14 @@
 namespace ZF\OAuth2\Doctrine\MutateTableNamesTest;
 
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\ServiceLocatorInterface;
+use Laminas\ServiceManager\ServiceLocatorInterface;
 use ZF\OAuth2\Doctrine\MutateTableNames\Container\MutateTableNamesSubscriberFactory;
 use ZF\OAuth2\Doctrine\MutateTableNames\EventSubscriber\MutateTableNamesSubscriber;
 
 /**
  * @covers  \ZF\OAuth2\Doctrine\MutateTableNames\Container\MutateTableNamesSubscriberFactory
  */
-class MutateTableNamesSubscriberFactoryTest extends \PHPUnit_Framework_TestCase
+class MutateTableNamesSubscriberFactoryTest extends \PHPUnit\Framework\TestCase
 {
     public function testCanCreateFromFactory()
     {

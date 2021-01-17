@@ -3,9 +3,9 @@
 namespace ZF\OAuth2\Doctrine\MutateTableNames;
 
 use Doctrine\Common\EventManager;
-use Zend\EventManager\EventInterface;
-use Zend\ModuleManager\Feature;
-use Zend\ServiceManager\ServiceLocatorInterface;
+use Laminas\EventManager\EventInterface;
+use Laminas\ModuleManager\Feature;
+use Laminas\ServiceManager\ServiceLocatorInterface;
 use ZF\OAuth2\Doctrine\MutateTableNames\EventSubscriber\MutateTableNamesSubscriber;
 
 class Module implements
@@ -22,7 +22,7 @@ class Module implements
     public function getAutoloaderConfig()
     {
         return [
-            'Zend\Loader\StandardAutoloader' => [
+            'Laminas\Loader\StandardAutoloader' => [
                 'namespaces' => [
                     __NAMESPACE__ => __DIR__,
                 ]
