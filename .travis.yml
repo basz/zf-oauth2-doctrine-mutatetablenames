@@ -4,6 +4,9 @@ cache:
   directories:
     - $HOME/.composer/cache
 
+env:
+  - XDEBUG_MODE=coverage
+
 matrix:
   fast_finish: true
   include:
