@@ -1,12 +1,12 @@
 {
     "name": "bushbaby/zf-oauth2-doctrine-mutatetablenames",
-    "description": "Module for Apigility's Doctrine OAuth2 Server Adapter so table names can be configured",
+    "description": "Module for Laminas API Tools's Doctrine OAuth2 Server Adapter so table names can be configured",
     "license": "BSD-3-Clause",
     "author": "Bas Kamer",
     "keywords": [
         "oauth2",
         "doctrine",
-        "apigility"
+        "laminas-api-tools"
     ],
     "require": {
         "php": "^7.3 || ~8.0",
