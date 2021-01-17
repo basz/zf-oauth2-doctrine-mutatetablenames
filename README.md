@@ -5,6 +5,7 @@ About
 -----
 
 > ^1.0 This module allows to configure the tables that the [Fork OAuth2 Doctrine Adapter](https://github.com/samsonasik/zf-oauth2-doctrine) for [Laminas API Tools](https://api-tools.getlaminas.org/) generates.
+
 > ^0.0 This module allows to configure the tables that the [OAuth2 Doctrine Adapter](https://github.com/api-skeletons/zf-oauth2-doctrine) for [Apigility](https://apigility.org) generates.
 
 [![Latest Stable Version](https://poser.pugx.org/bushbaby/zf-oauth2-doctrine-mutatetablenames/v/stable)](https://packagist.org/packages/bushbaby/zf-oauth2-doctrine-mutatetablenames)
