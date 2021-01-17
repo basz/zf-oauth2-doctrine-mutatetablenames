@@ -8,14 +8,14 @@ use ZF\OAuth2\Doctrine\MutateTableNames\EventSubscriber\MutateTableNamesSubscrib
 /**
  * @covers  \ZF\OAuth2\Doctrine\MutateTableNames\EventSubscriber\MutateTableNamesSubscriber
  */
-class MutateTableNamesSubscriberTest extends \PHPUnit_Framework_TestCase
+class MutateTableNamesSubscriberTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @var MutateTableNamesSubscriber
      */
     private $subscriber;
 
-    public function setUp()
+    protected function setUp(): void
     {
         $this->config     = include __DIR__ . '/../../../config/oauth2.doctrine-orm.mutatetablenames.global.php.dist';
         $this->config     = $this->config['zf-oauth2-doctrine']['mutatetablenames'];

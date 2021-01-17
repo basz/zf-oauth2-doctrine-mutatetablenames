@@ -16,7 +16,7 @@ use ZF\OAuth2\Doctrine\MutateTableNames\Module;
 /**
  * @covers  \ZF\OAuth2\Doctrine\MutateTableNames\Module
  */
-class ModuleTest extends \PHPUnit_Framework_TestCase
+class ModuleTest extends \PHPUnit\Framework\TestCase
 {
     public function testAttachesEventSubscriberToDoctrineEventManager()
     {
@@ -75,7 +75,7 @@ class ModuleTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf(AutoloaderProviderInterface::class, $module);
 
         $autoload = $module->getAutoloaderConfig();
-        $this->assertInternalType('array', $autoload);
+        $this->assertIsArray($autoload);
         $this->assertSame(array(
             'Laminas\\Loader\\StandardAutoloader' =>
                 array(
@@ -93,7 +93,7 @@ class ModuleTest extends \PHPUnit_Framework_TestCase
 
         $this->assertInstanceOf(ConfigProviderInterface::class, $module);
 
-        $this->assertInternalType('array', $module->getConfig());
+        $this->assertIsArray($module->getConfig());
     }
 
     public function testModuleDependencies()

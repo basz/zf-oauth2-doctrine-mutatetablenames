@@ -10,7 +10,7 @@ use ZF\OAuth2\Doctrine\MutateTableNames\EventSubscriber\MutateTableNamesSubscrib
 /**
  * @covers  \ZF\OAuth2\Doctrine\MutateTableNames\Container\MutateTableNamesSubscriberFactory
  */
-class MutateTableNamesSubscriberFactoryTest extends \PHPUnit_Framework_TestCase
+class MutateTableNamesSubscriberFactoryTest extends \PHPUnit\Framework\TestCase
 {
     public function testCanCreateFromFactory()
     {
