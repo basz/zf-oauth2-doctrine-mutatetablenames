@@ -1,12 +1,12 @@
 <?php
 
-namespace Laminas\OAuth2\Doctrine\MutateTableNames;
+namespace ZF\OAuth2\Doctrine\MutateTableNames;
 
 use Doctrine\Common\EventManager;
 use Laminas\EventManager\EventInterface;
 use Laminas\ModuleManager\Feature;
-use Laminas\OAuth2\Doctrine\MutateTableNames\EventSubscriber\MutateTableNamesSubscriber;
 use Laminas\ServiceManager\ServiceLocatorInterface;
+use ZF\OAuth2\Doctrine\MutateTableNames\EventSubscriber\MutateTableNamesSubscriber;
 
 class Module implements
     Feature\AutoloaderProviderInterface,

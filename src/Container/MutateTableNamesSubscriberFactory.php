@@ -1,12 +1,12 @@
 <?php
 
-namespace Laminas\OAuth2\Doctrine\MutateTableNames\Container;
+namespace ZF\OAuth2\Doctrine\MutateTableNames\Container;
 
 use Interop\Container\ContainerInterface;
-use Laminas\OAuth2\Doctrine\MutateTableNames\EventSubscriber\MutateTableNamesSubscriber;
 use Laminas\ServiceManager\FactoryInterface;
 use Laminas\ServiceManager\ServiceLocatorInterface;
 use Laminas\Stdlib\ArrayUtils;
+use ZF\OAuth2\Doctrine\MutateTableNames\EventSubscriber\MutateTableNamesSubscriber;
 
 class MutateTableNamesSubscriberFactory implements FactoryInterface
 {

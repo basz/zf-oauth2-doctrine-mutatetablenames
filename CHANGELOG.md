@@ -4,7 +4,6 @@ CHANGELOG
 2.0.0
 - [BC] updated so it works with `api-skeletons/oauth2-doctrine`
 - Updated `config/oauth2.doctrine-orm.mutatetablenames.global.php.dist` with the new namespace
-- Change module namespace from `ZF\OAuth2\Doctrine\MutateTableNames` to `Laminas\OAuth2\Doctrine\MutateTableNames`
 
 0.4.0
 

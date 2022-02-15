@@ -1,6 +1,6 @@
 <?php
 
-namespace Laminas\OAuth2\Doctrine\MutateTableNamesTest;
+namespace ZF\OAuth2\Doctrine\MutateTableNamesTest;
 
 use Doctrine\Common\EventManager;
 use Laminas\EventManager\EventInterface;
@@ -9,12 +9,12 @@ use Laminas\ModuleManager\Feature\BootstrapListenerInterface;
 use Laminas\ModuleManager\Feature\ConfigProviderInterface;
 use Laminas\ModuleManager\Feature\DependencyIndicatorInterface;
 use Laminas\Mvc\ApplicationInterface;
-use Laminas\OAuth2\Doctrine\MutateTableNames\EventSubscriber\MutateTableNamesSubscriber;
-use Laminas\OAuth2\Doctrine\MutateTableNames\Module;
 use Laminas\ServiceManager\ServiceLocatorInterface;
+use ZF\OAuth2\Doctrine\MutateTableNames\EventSubscriber\MutateTableNamesSubscriber;
+use ZF\OAuth2\Doctrine\MutateTableNames\Module;
 
 /**
- * @covers  \Laminas\OAuth2\Doctrine\MutateTableNames\Module
+ * @covers  \ZF\OAuth2\Doctrine\MutateTableNames\Module
  */
 class ModuleTest extends \PHPUnit\Framework\TestCase
 {
@@ -71,7 +71,7 @@ class ModuleTest extends \PHPUnit\Framework\TestCase
                 array(
                     'namespaces' =>
                         array(
-                            'Laminas\\OAuth2\\Doctrine\\MutateTableNames' => realpath(__DIR__ . '/../../src'),
+                            'ZF\\OAuth2\\Doctrine\\MutateTableNames' => realpath(__DIR__ . '/../../src'),
                         ),
                 ),
         ), $autoload);

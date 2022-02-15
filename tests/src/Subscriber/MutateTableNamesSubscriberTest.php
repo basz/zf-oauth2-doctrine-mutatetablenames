@@ -1,12 +1,12 @@
 <?php
 
-namespace Laminas\OAuth2\Doctrine\MutateTableNamesTest;
+namespace ZF\OAuth2\Doctrine\MutateTableNamesTest;
 
 use Doctrine\ORM\Mapping\ClassMetadataInfo;
-use Laminas\OAuth2\Doctrine\MutateTableNames\EventSubscriber\MutateTableNamesSubscriber;
+use ZF\OAuth2\Doctrine\MutateTableNames\EventSubscriber\MutateTableNamesSubscriber;
 
 /**
- * @covers  \Laminas\OAuth2\Doctrine\MutateTableNames\EventSubscriber\MutateTableNamesSubscriber
+ * @covers  \ZF\OAuth2\Doctrine\MutateTableNames\EventSubscriber\MutateTableNamesSubscriber
  */
 class MutateTableNamesSubscriberTest extends \PHPUnit\Framework\TestCase
 {

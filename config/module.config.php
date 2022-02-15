@@ -1,7 +1,7 @@
 <?php
 
-use Laminas\OAuth2\Doctrine\MutateTableNames\Container\MutateTableNamesSubscriberFactory;
-use Laminas\OAuth2\Doctrine\MutateTableNames\EventSubscriber\MutateTableNamesSubscriber;
+use ZF\OAuth2\Doctrine\MutateTableNames\Container\MutateTableNamesSubscriberFactory;
+use ZF\OAuth2\Doctrine\MutateTableNames\EventSubscriber\MutateTableNamesSubscriber;
 
 return array(
     'apiskeletons-oauth2-doctrine' => [

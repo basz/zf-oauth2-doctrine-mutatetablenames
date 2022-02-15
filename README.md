@@ -29,7 +29,7 @@ Add this module to your application's configuration:
 ```php
 'modules' => array(
    ...
-   'Laminas\OAuth2\Doctrine\MutateTableNames',
+   'ZF\OAuth2\Doctrine\MutateTableNames',
 ),
 ```
 

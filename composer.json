@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Laminas\\OAuth2\\Doctrine\\MutateTableNames\\": "src/"
+            "ZF\\OAuth2\\Doctrine\\MutateTableNames\\": "src/"
         },
         "classmap": [
             "Module.php"

@@ -33,6 +33,6 @@ if (! isset($loader)) {
     throw new RuntimeException('vendor/autoload.php could not be found. Did you install via composer?');
 }
 
-$loader->add('Laminas\\OAuth2\\Doctrine\\MutateTableNamesTest\\', __DIR__);
+$loader->add('ZF\\OAuth2\\Doctrine\\MutateTableNamesTest\\', __DIR__);
 
 unset($files, $file, $loader);
