@@ -1,6 +1,6 @@
 <?php
 
-namespace ZF\OAuth2\Doctrine\MutateTableNamesTest;
+namespace Laminas\OAuth2\Doctrine\MutateTableNamesTest;
 
 use Doctrine\Common\EventManager;
 use Laminas\EventManager\EventInterface;
@@ -9,12 +9,12 @@ use Laminas\ModuleManager\Feature\BootstrapListenerInterface;
 use Laminas\ModuleManager\Feature\ConfigProviderInterface;
 use Laminas\ModuleManager\Feature\DependencyIndicatorInterface;
 use Laminas\Mvc\ApplicationInterface;
+use Laminas\OAuth2\Doctrine\MutateTableNames\EventSubscriber\MutateTableNamesSubscriber;
+use Laminas\OAuth2\Doctrine\MutateTableNames\Module;
 use Laminas\ServiceManager\ServiceLocatorInterface;
-use ZF\OAuth2\Doctrine\MutateTableNames\EventSubscriber\MutateTableNamesSubscriber;
-use ZF\OAuth2\Doctrine\MutateTableNames\Module;
 
 /**
- * @covers  \ZF\OAuth2\Doctrine\MutateTableNames\Module
+ * @covers  \Laminas\OAuth2\Doctrine\MutateTableNames\Module
  */
 class ModuleTest extends \PHPUnit\Framework\TestCase
 {
@@ -43,7 +43,7 @@ class ModuleTest extends \PHPUnit\Framework\TestCase
             ->method('get')
             ->withConsecutive(['config'], [MutateTableNamesSubscriber::class], ['event_manager_service_name'])
             ->willReturnOnConsecutiveCalls([
-                'zf-oauth2-doctrine' => [
+                'apiskeletons-oauth2-doctrine' => [
                     'default' => [
                         'event_manager' => 'event_manager_service_name'
                     ]
@@ -71,7 +71,7 @@ class ModuleTest extends \PHPUnit\Framework\TestCase
                 array(
                     'namespaces' =>
                         array(
-                            'ZF\\OAuth2\\Doctrine\\MutateTableNames' => realpath(__DIR__ . '/../../src'),
+                            'Laminas\\OAuth2\\Doctrine\\MutateTableNames' => realpath(__DIR__ . '/../../src'),
                         ),
                 ),
         ), $autoload);
@@ -92,6 +92,6 @@ class ModuleTest extends \PHPUnit\Framework\TestCase
 
         $this->assertInstanceOf(DependencyIndicatorInterface::class, $module);
 
-        $this->assertSame(['ZF\OAuth2\Doctrine'], $module->getModuleDependencies());
+        $this->assertSame(['ApiSkeletons\OAuth2\Doctrine'], $module->getModuleDependencies());
     }
 }

@@ -3,6 +3,7 @@ Mutate tablename for Apigility/Laminas API Tools OAuth2 Doctrine Adapter
 
 About
 -----
+> ^2.0 This module allows to configure the tables that the [OAuth2 Doctrine Adapter](https://github.com/API-Skeletons/oauth2-doctrine) for [Laminas API Tools](https://api-tools.getlaminas.org/) generates.
 
 > ^1.0 This module allows to configure the tables that the [Fork OAuth2 Doctrine Adapter](https://github.com/samsonasik/zf-oauth2-doctrine) for [Laminas API Tools](https://api-tools.getlaminas.org/) generates.
 
@@ -28,7 +29,7 @@ Add this module to your application's configuration:
 ```php
 'modules' => array(
    ...
-   'ZF\OAuth2\Doctrine\MutateTableNames',
+   'Laminas\OAuth2\Doctrine\MutateTableNames',
 ),
 ```
 

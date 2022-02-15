@@ -5,7 +5,7 @@
       <directory suffix=".php">./src</directory>
     </include>
   </coverage>
-  <testsuite name="ZfOAuth2DoctrineMutateablename tests">
+  <testsuite name="LaminasApiOAuth2DoctrineMutateablename tests">
     <directory>./tests</directory>
   </testsuite>
 </phpunit>

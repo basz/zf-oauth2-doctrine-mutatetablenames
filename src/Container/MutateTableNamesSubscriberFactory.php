@@ -1,12 +1,12 @@
 <?php
 
-namespace ZF\OAuth2\Doctrine\MutateTableNames\Container;
+namespace Laminas\OAuth2\Doctrine\MutateTableNames\Container;
 
 use Interop\Container\ContainerInterface;
+use Laminas\OAuth2\Doctrine\MutateTableNames\EventSubscriber\MutateTableNamesSubscriber;
 use Laminas\ServiceManager\FactoryInterface;
 use Laminas\ServiceManager\ServiceLocatorInterface;
 use Laminas\Stdlib\ArrayUtils;
-use ZF\OAuth2\Doctrine\MutateTableNames\EventSubscriber\MutateTableNamesSubscriber;
 
 class MutateTableNamesSubscriberFactory implements FactoryInterface
 {
@@ -21,7 +21,7 @@ class MutateTableNamesSubscriberFactory implements FactoryInterface
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         $config          = $container->get('config');
-        $instanceConfigs = array_keys($config['zf-oauth2-doctrine']);
+        $instanceConfigs = array_keys($config['apiskeletons-oauth2-doctrine']);
         $mapping         = [];
 
         foreach ($instanceConfigs as $instanceConfig) {
@@ -29,13 +29,13 @@ class MutateTableNamesSubscriberFactory implements FactoryInterface
                 continue;
             }
 
-            if (!isset($config['zf-oauth2-doctrine']['mutatetablenames'][$instanceConfig])) {
-                $config['zf-oauth2-doctrine']['mutatetablenames'][$instanceConfig] = [];
+            if (!isset($config['apiskeletons-oauth2-doctrine']['mutatetablenames'][$instanceConfig])) {
+                $config['apiskeletons-oauth2-doctrine']['mutatetablenames'][$instanceConfig] = [];
             }
 
             $instanceMapping[$instanceConfig] = ArrayUtils::merge(
-                $config['zf-oauth2-doctrine'][$instanceConfig]['dynamic_mapping'],
-                $config['zf-oauth2-doctrine']['mutatetablenames'][$instanceConfig]
+                $config['apiskeletons-oauth2-doctrine'][$instanceConfig]['dynamic_mapping'],
+                $config['apiskeletons-oauth2-doctrine']['mutatetablenames'][$instanceConfig]
             );
 
             $mapping         = ArrayUtils::merge($instanceMapping, $mapping);

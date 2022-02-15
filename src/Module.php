@@ -1,12 +1,12 @@
 <?php
 
-namespace ZF\OAuth2\Doctrine\MutateTableNames;
+namespace Laminas\OAuth2\Doctrine\MutateTableNames;
 
 use Doctrine\Common\EventManager;
 use Laminas\EventManager\EventInterface;
 use Laminas\ModuleManager\Feature;
+use Laminas\OAuth2\Doctrine\MutateTableNames\EventSubscriber\MutateTableNamesSubscriber;
 use Laminas\ServiceManager\ServiceLocatorInterface;
-use ZF\OAuth2\Doctrine\MutateTableNames\EventSubscriber\MutateTableNamesSubscriber;
 
 class Module implements
     Feature\AutoloaderProviderInterface,
@@ -47,7 +47,7 @@ class Module implements
         $subscriber = $serviceLocator->get(MutateTableNamesSubscriber::class);
 
         /** @var EventManager $eventManager */
-        $eventManager = $serviceLocator->get($config['zf-oauth2-doctrine']['default']['event_manager']);
+        $eventManager = $serviceLocator->get($config['apiskeletons-oauth2-doctrine']['default']['event_manager']);
         $eventManager->addEventSubscriber($subscriber);
     }
 
@@ -64,6 +64,6 @@ class Module implements
      */
     public function getModuleDependencies()
     {
-        return ['ZF\OAuth2\Doctrine'];
+        return ['ApiSkeletons\OAuth2\Doctrine'];
     }
 }

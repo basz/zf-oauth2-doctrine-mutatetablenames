@@ -1,14 +1,14 @@
 <?php
 
-namespace ZF\OAuth2\Doctrine\MutateTableNamesTest;
+namespace Laminas\OAuth2\Doctrine\MutateTableNamesTest;
 
 use Interop\Container\ContainerInterface;
+use Laminas\OAuth2\Doctrine\MutateTableNames\Container\MutateTableNamesSubscriberFactory;
+use Laminas\OAuth2\Doctrine\MutateTableNames\EventSubscriber\MutateTableNamesSubscriber;
 use Laminas\ServiceManager\ServiceLocatorInterface;
-use ZF\OAuth2\Doctrine\MutateTableNames\Container\MutateTableNamesSubscriberFactory;
-use ZF\OAuth2\Doctrine\MutateTableNames\EventSubscriber\MutateTableNamesSubscriber;
 
 /**
- * @covers  \ZF\OAuth2\Doctrine\MutateTableNames\Container\MutateTableNamesSubscriberFactory
+ * @covers  \Laminas\OAuth2\Doctrine\MutateTableNames\Container\MutateTableNamesSubscriberFactory
  */
 class MutateTableNamesSubscriberFactoryTest extends \PHPUnit\Framework\TestCase
 {
@@ -20,7 +20,7 @@ class MutateTableNamesSubscriberFactoryTest extends \PHPUnit\Framework\TestCase
             ->method('get')
             ->with('config')
             ->willReturn([
-                'zf-oauth2-doctrine' => [
+                'apiskeletons-oauth2-doctrine' => [
                     'default'          => [
                         'dynamic_mapping' => []
                     ],
@@ -44,7 +44,7 @@ class MutateTableNamesSubscriberFactoryTest extends \PHPUnit\Framework\TestCase
             ->method('get')
             ->with('config')
             ->willReturn([
-                'zf-oauth2-doctrine' => [
+                'apiskeletons-oauth2-doctrine' => [
                     'default'          => [
                         'dynamic_mapping' => []
                     ],
@@ -68,7 +68,7 @@ class MutateTableNamesSubscriberFactoryTest extends \PHPUnit\Framework\TestCase
             ->method('get')
             ->with('config')
             ->willReturn([
-                'zf-oauth2-doctrine' => [
+                'apiskeletons-oauth2-doctrine' => [
                     'default'          => [
                         'dynamic_mapping' => []
                     ],
