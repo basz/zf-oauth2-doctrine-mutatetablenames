@@ -16,7 +16,7 @@ class MutateTableNamesSubscriberFactoryTest extends \PHPUnit\Framework\TestCase
     {
         $container = $this->getMockBuilder(ContainerInterface::class)->getMock();
 
-        $container->expects($this->at(0))
+        $container->expects($this->once())
             ->method('get')
             ->with('config')
             ->willReturn([
@@ -40,7 +40,7 @@ class MutateTableNamesSubscriberFactoryTest extends \PHPUnit\Framework\TestCase
     {
         $container = $this->getMockBuilder(ServiceLocatorInterface::class)->getMock();
 
-        $container->expects($this->at(0))
+        $container->expects($this->once())
             ->method('get')
             ->with('config')
             ->willReturn([
@@ -64,7 +64,7 @@ class MutateTableNamesSubscriberFactoryTest extends \PHPUnit\Framework\TestCase
     {
         $container = $this->getMockBuilder(ContainerInterface::class)->getMock();
 
-        $container->expects($this->at(0))
+        $container->expects($this->once())
             ->method('get')
             ->with('config')
             ->willReturn([

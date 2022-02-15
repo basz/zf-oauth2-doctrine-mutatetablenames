@@ -37,28 +37,18 @@ class ModuleTest extends \PHPUnit\Framework\TestCase
         $application->expects($this->once())->method('getServiceManager')->willReturn($serviceLocator);
 
         // get config from service manager mock
-        $serviceLocator->expects($this->at(0))
+        // get subscriber from service manager mock
+        // get doctrine event manager mock from service locatior
+        $serviceLocator->expects($this->exactly(3))
             ->method('get')
-            ->with('config')
-            ->willReturn([
+            ->withConsecutive(['config'], [MutateTableNamesSubscriber::class], ['event_manager_service_name'])
+            ->willReturnOnConsecutiveCalls([
                 'zf-oauth2-doctrine' => [
                     'default' => [
                         'event_manager' => 'event_manager_service_name'
                     ]
                 ]
-            ]);
-
-        // get subscriber from service manager mock
-        $serviceLocator->expects($this->at(1))
-            ->method('get')
-            ->with(MutateTableNamesSubscriber::class)
-            ->willReturn($mutateTableNamesSubscriber);
-
-        // get doctrine event manager mock from service locatior
-        $serviceLocator->expects($this->at(2))
-            ->method('get')
-            ->with('event_manager_service_name')
-            ->willReturn($eventManager);
+            ], $mutateTableNamesSubscriber, $eventManager);
 
         // add subscriber to doctrine event manager
         $eventManager->expects($this->once())
