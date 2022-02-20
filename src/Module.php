@@ -47,7 +47,7 @@ class Module implements
         $subscriber = $serviceLocator->get(MutateTableNamesSubscriber::class);
 
         /** @var EventManager $eventManager */
-        $eventManager = $serviceLocator->get($config['zf-oauth2-doctrine']['default']['event_manager']);
+        $eventManager = $serviceLocator->get($config['apiskeletons-oauth2-doctrine']['default']['event_manager']);
         $eventManager->addEventSubscriber($subscriber);
     }
 
@@ -64,6 +64,6 @@ class Module implements
      */
     public function getModuleDependencies()
     {
-        return ['ZF\OAuth2\Doctrine'];
+        return ['ApiSkeletons\OAuth2\Doctrine'];
     }
 }

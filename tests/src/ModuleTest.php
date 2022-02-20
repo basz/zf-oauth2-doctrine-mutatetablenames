@@ -43,7 +43,7 @@ class ModuleTest extends \PHPUnit\Framework\TestCase
             ->method('get')
             ->withConsecutive(['config'], [MutateTableNamesSubscriber::class], ['event_manager_service_name'])
             ->willReturnOnConsecutiveCalls([
-                'zf-oauth2-doctrine' => [
+                'apiskeletons-oauth2-doctrine' => [
                     'default' => [
                         'event_manager' => 'event_manager_service_name'
                     ]
@@ -92,6 +92,6 @@ class ModuleTest extends \PHPUnit\Framework\TestCase
 
         $this->assertInstanceOf(DependencyIndicatorInterface::class, $module);
 
-        $this->assertSame(['ZF\OAuth2\Doctrine'], $module->getModuleDependencies());
+        $this->assertSame(['ApiSkeletons\OAuth2\Doctrine'], $module->getModuleDependencies());
     }
 }

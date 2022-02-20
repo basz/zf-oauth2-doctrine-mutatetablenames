@@ -4,7 +4,7 @@ use ZF\OAuth2\Doctrine\MutateTableNames\Container\MutateTableNamesSubscriberFact
 use ZF\OAuth2\Doctrine\MutateTableNames\EventSubscriber\MutateTableNamesSubscriber;
 
 return array(
-    'zf-oauth2-doctrine' => [
+    'apiskeletons-oauth2-doctrine' => [
         'mutatetablenames' => [
             'default' => []
         ],

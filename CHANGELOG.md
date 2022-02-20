@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+2.0.0
+- [BC] updated so it works with `api-skeletons/oauth2-doctrine`
+- Updated `config/oauth2.doctrine-orm.mutatetablenames.global.php.dist` with the new namespace
+
 0.4.0
 
 - [BC] Adds support for v1.0 of OAuth2 Doctrine Adapter which supports multiple OAuth2 servers

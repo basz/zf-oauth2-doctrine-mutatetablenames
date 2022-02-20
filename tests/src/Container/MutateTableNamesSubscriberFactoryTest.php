@@ -20,7 +20,7 @@ class MutateTableNamesSubscriberFactoryTest extends \PHPUnit\Framework\TestCase
             ->method('get')
             ->with('config')
             ->willReturn([
-                'zf-oauth2-doctrine' => [
+                'apiskeletons-oauth2-doctrine' => [
                     'default'          => [
                         'dynamic_mapping' => []
                     ],
@@ -44,7 +44,7 @@ class MutateTableNamesSubscriberFactoryTest extends \PHPUnit\Framework\TestCase
             ->method('get')
             ->with('config')
             ->willReturn([
-                'zf-oauth2-doctrine' => [
+                'apiskeletons-oauth2-doctrine' => [
                     'default'          => [
                         'dynamic_mapping' => []
                     ],
@@ -68,7 +68,7 @@ class MutateTableNamesSubscriberFactoryTest extends \PHPUnit\Framework\TestCase
             ->method('get')
             ->with('config')
             ->willReturn([
-                'zf-oauth2-doctrine' => [
+                'apiskeletons-oauth2-doctrine' => [
                     'default'          => [
                         'dynamic_mapping' => []
                     ],
